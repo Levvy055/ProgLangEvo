@@ -171,7 +171,7 @@
 
 			multiplex: {
 				secret: Reveal.getQueryHash().s || null,
-				id: 'ea96fba57eebfb41',
+				id: 'e7b4c9c90a20fd5f',
 				url: 'hope-lew.pl'
 			},
 
@@ -201,11 +201,7 @@
 					async: true
 				},
 				{
-					src: 'plugin/multiplex/master.js',
-					async: true
-				},
-				{
-					src: 'plugin/notes-server/client.js',
+					src: Reveal.getQueryHash().s ? 'plugin/multiplex/master.js' : 'plugin/multiplex/client.js',
 					async: true
 				}
 			]
