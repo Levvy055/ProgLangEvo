@@ -16,6 +16,8 @@
 	<link rel="stylesheet" href="css/theme/blood.css" id="theme">
 	<!-- Theme used for syntax highlighting of code -->
 	<link rel="stylesheet" href="lib/css/zenburn.css">
+	<link type="text/css" rel="stylesheet" href="lib/css/materialize.min.css" media="screen,projection" />
+
 
 	<!-- Printing and PDF exports -->
 	<script>
@@ -67,6 +69,41 @@
 			</section>
 			<section id="section-machine-code">
 				<h2>Machine Code</h2>
+				<div class="container">
+					<div class="row">
+						<div class="card-panel grey darken-2 fragment col s12">
+							<p class="">01100100</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col s3 fragment">
+							<p class="grey darken-2">0110</p>
+						</div>
+						<div class="col s4 fragment">
+							<p class="blue-grey darken-2">OPCODE</p>
+						</div>
+						<div class="col s5 fragment">
+							<p class="grey darken-2">copy to reg A</p>
+						</div>
+					</div>
+					<div class="row">
+							<div class="col s3 fragment">
+								<p class="grey darken-2">0100</p>
+							</div>
+							<div class="col s4 fragment">
+								<p class="blue-grey darken-2">mem loc</p>
+							</div>
+							<div class="col s5 fragment">
+								<p class="grey darken-2">4</p>
+							</div>
+						</div>
+				</div>
+			</section>
+			<section id="section-programming-lang">
+				<h2>Programming Language</h2>
+			</section>
+			<section id="section-beg">
+				<h2>How machine code work</h2>
 			</section>
 		</div>
 	</div>
@@ -218,6 +255,10 @@
 				$('#section-comp-langs').attr('data-state', '');
 			}
 		});
+	</script>
+	<script type="text/javascript" src="lib/js/materialize.min.js"></script>
+	<script>
+		M.AutoInit();
 	</script>
 </body>
 
