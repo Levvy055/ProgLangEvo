@@ -73,7 +73,7 @@
 					<div class="container">
 						<div class="row">
 							<div class="card-panel grey darken-2 fragment col s12">
-								<p class="">01100100</p>
+								<p class="">0110 0100</p>
 							</div>
 						</div>
 						<div class="row">
@@ -126,19 +126,84 @@
 				<section>
 					<h3>First years of computers</h3>
 					<ol>
-						<li>write PSEUDO-CODE</li>
-						<li>translate into MACHINE CODE</li>
-						<li>convert to binary</li>
-						<li>connect appropriate joints / write on perforated tape</li>
+						<li class="fragment">write PSEUDO-CODE</li>
+						<li class="fragment">translate into MACHINE CODE</li>
+						<li class="fragment">convert to binary</li>
+						<li class="fragment">connect appropriate joints / write on perforated tape</li>
 					</ol>
+				</section>
+			</section>
+			<section id="section-assembly">
+				<section>
+					<p>Let's go to the next level:</p>
+					<h2 class="fragment">Assembly language</h2>
+					<h4 class="fragment">lowest level programming language</h4>
+				</section>
+				<section>
+					<h3>Assembly language</h3>
+					<div class="container machine-flex">
+						<div class="row">
+							<div class="col s3">
+								<p class="grey darken-2">Machine code</p>
+							</div>
+							<div class="col s3">
+								<p class="blue-grey darken-2">0110 0100</p>
+							</div>
+							<div class="col s6">
+								<p class="blue-grey darken-2">in HEX: 6 4</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col s3">
+								<p class="grey darken-2">Pseudo code</p>
+							</div>
+							<div class="col s3">
+								<p class="blue-grey darken-2">LOAD_A 0100</p>
+							</div>
+							<div class="col s6">
+								<p class="blue-grey darken-2">LOAD_A == 0110</p>
+							</div>
+						</div>
+						<div class="row">
+								<div class="col s3">
+									<p class="grey darken-2">Assembly language</p>
+								</div>
+								<div class="col s3">
+									<p class="blue-grey darken-2">MOV EAX, [4]</p>
+								</div>
+								<div class="col s6">
+									<p class="blue-grey darken-2">copy value from [4](mem loc) into A registry</p>
+								</div>
+							</div>
+					</div>
+				</section>
+				<section>
+					<h3>Assembly example</h3>
+					<p class="grey darken-4"><pre><code>
+PUBLIC _myFunc
+_myFunc PROC
+	push ebp     ; Save the old base pointer value.
+	mov ebp, esp ; Set the new base pointer value.
+	sub esp, 4   ; Make room for one 4-byte local variable.
+	push edi     ; Save the values of registers that the function
+	push esi     ; will modify. This function uses EDI and ESI.
+
+	mov eax, [ebp+8]   ; Move value of parameter 1 into EAX
+	mov esi, [ebp+12]  ; Move value of parameter 2 into ESI
+	mov edi, [ebp+16]  ; Move value of parameter 3 into EDI
+
+	mov [ebp-4], edi   ; Move EDI into the local variable
+	add [ebp-4], esi   ; Add ESI into the local variable
+	add eax, [ebp-4]   ; Add the contents of the local variable
+					</code></pre></p>
 				</section>
 			</section>
 			<section id="section-programming-lang">
 				<h2>Programming Language</h2>
+				<p>Language which comprises a set of instructions</p>
+				<p>Each language can have different:</br> <b>syntax</b> and/or <b>semantics</b></p>
 			</section>
-			<section id="section-beg">
-				<h2>How machine code work</h2>
-			</section>
+
 		</div>
 	</div>
 

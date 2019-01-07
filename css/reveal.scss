@@ -246,6 +246,25 @@ body {
 	box-sizing: border-box;
 }
 
+.machine-flex {
+	width: 100% !important;
+
+	p {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 140px;
+	}
+}
+
+.present {
+	pre {
+		code {
+			overflow-y: hidden !important;
+			max-height: fit-content !important;
+		}
+	}
+}
 
 /*********************************************
  * CONTROLS
