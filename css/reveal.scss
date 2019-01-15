@@ -266,6 +266,10 @@ body {
 	}
 }
 
+.image-grid {
+	height: 150px;
+}
+
 /*********************************************
  * CONTROLS
  *********************************************/
@@ -1781,3 +1785,5 @@ $controlsArrowAngleActive: 36deg;
 .zoomed .reveal .roll span:after {
 	visibility: hidden;
 }
+
+

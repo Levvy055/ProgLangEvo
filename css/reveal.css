@@ -280,6 +280,10 @@ body {
   max-height: fit-content !important;
 }
 
+.image-grid {
+  height: 150px;
+}
+
 /*********************************************
  * CONTROLS
  *********************************************/
