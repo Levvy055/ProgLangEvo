@@ -37,6 +37,9 @@
 		<div class="slides">
 			<section id="section-title" data-background="images/1.jpg">
 				<h1>Programming Languages Evolution</h1>
+				<footer class="page-footer">
+				<p class="right" style=" font-size: medium;">created by: Lukas Levvy</p>
+			</footer>
 			</section>
 			<section id="section-comp-langs" data-background="images/2.jpg">
 				<h4>Computer languages</h4>
@@ -225,8 +228,8 @@ _myFunc PROC
 					<h2>Abstraction</h2>
 					<p>Language of higher level </p>
 					<p>means that</p>
-					<p>-> <strong>one</strong> instruction in this language might result in 
-					</br><strong>dozens</strong> of instructions being executed by the CPU</p>
+					<p>-> <strong>one</strong> instruction in this language might result in
+						</br><strong>dozens</strong> of instructions being executed by the CPU</p>
 				</section>
 			</section>
 			<section id="section-langs-chart" data-background="images/ComputerLanguagesChart.png">
@@ -323,6 +326,167 @@ _myFunc PROC
 						</div>
 					</div>
 				</section>
+			</section>
+			<section id="section-hello-world">
+				<section>
+					<h2>'Hello World' Programs</h2>
+				</section>
+				<section>
+					<h4>Machine Code</h4>
+					<pre><code>
+	b8    21 0a 00 00   #moving "!\n" into eax
+	a3    0c 10 00 06   #moving eax into first memory location
+	b8    6f 72 6c 64   #moving "orld" into eax
+	a3    08 10 00 06   #moving eax into next memory location
+	b8    6f 2c 20 57   #moving "o, W" into eax
+	a3    04 10 00 06   #moving eax into next memory location
+	b8    48 65 6c 6c   #moving "Hell" into eax
+	a3    00 10 00 06   #moving eax into next memory location
+	b9    00 10 00 06   #moving pointer to start of memory location into ecx
+	ba    10 00 00 00   #moving string size into edx
+	bb    01 00 00 00   #moving "stdout" number to ebx
+	b8    04 00 00 00   #moving "print out" syscall number to eax
+	cd    80            #calling the linux kernel to execute our print to stdout
+	b8    01 00 00 00   #moving "sys_exit" call number to eax
+	cd    80            #executing it via linux sys_call
+						</code></pre>
+				</section>
+				<section>
+					<h4>Assembly</h4>
+					<pre><code>
+		global  _main
+		extern  _printf
+
+		section .text
+	_main:
+		push    message
+		call    _printf
+		add     esp, 4
+		ret
+	message:
+		db  'Hello, World', 10, 0
+					</code></pre>
+				</section>
+				<section>
+					<h4>C++</h4>
+					<pre><code>
+	#include &lt;iostream&gt;
+		int main()
+		{
+			std::cout << "Hello, world!\n";
+			return 0;
+		}
+					</code></pre>
+				</section>
+				<section>
+					<h4>C#</h4>
+					<pre><code>
+	using System;
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			Console.WriteLine("Hello, world!");
+		}
+	}				</code></pre>
+					<h4>Java</h4>
+					<pre><code>
+	class HelloWorldApp {
+		public static void main(String[] args) {
+			System.out.println("Hello World!");
+		}
+	}				</code></pre>
+				</section>
+				<section>
+					<h4>COBOL</h4>
+					<pre><code>
+	IDENTIFICATION DIVISION.
+	PROGRAM-ID. hello-world.
+	PROCEDURE DIVISION.
+		DISPLAY "Hello, world!"
+					</code></pre>
+				</section>
+				<section>
+					<h4>JavaScript</h4>
+					<pre><code>
+		console.log("Hello, World!");
+						</code></pre>
+					<h4>CoffeeScript</h4>
+					<pre><code>
+	console.log "Hello, World!"
+					</code></pre>
+					<h4>TypeScript</h4>
+					<pre><code>
+	console.log("Hello World!");			
+					</code></pre>
+				</section>
+				<section>
+					<h4>PHP</h4>
+					<pre><code>
+	<?php echo "Hello, World"; ?>
+					</code></pre>
+					<h4>Python</h4>
+					<pre><code>
+	print("Hello World")
+					</code></pre>
+					<h4>Scala</h4>
+					<pre><code>
+	object HelloWorld extends App {
+		println("Hello, World!")
+	}		
+					</code></pre>
+				</section>
+				<section>
+					<h4>SWIFT</h4>
+					<pre><code>
+	println("Hello, world!")				
+					</code></pre>
+					<h4>Ruby</h4>
+					<pre><code>
+	println "Hello World"
+	or
+	puts 'Hello World!'
+					</code></pre>
+				</section>
+				<section>
+						<h4>Brainfuck</h4>
+						<pre><code>
+++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.
+						</code></pre>
+						<h4>Arnoldc</h4>
+						<pre><code>
+	IT'S SHOWTIME
+	TALK TO THE HAND "Hello, World!"
+	YOU HAVE BEEN TERMINATED
+						</code></pre>
+					</section>
+					<section>
+							<h4>Pikachu</h4>
+							<pre><code>
+pikachu pika pikachu pika pika pi pi pika pikachu pika pikachu 
+pi pikachu pi pikachu pi pika pi pikachu pikachu pi pi pika pika
+pikachu pika pikachu pikachu 
+pi pika pi pika pika pi pikachu pikachu pi pikachu pi pika pikachu 
+pi pikachu pika pikachu pi pikachu pikachu pi pikachu 
+pika pika pikachu pi pikachu pi pi pikachu pikachu pika pikachu 
+pi pika pi pi pika pika pikachu pikachu pi pi pikachu pi pikachu
+pikachu pikachu pi pikachupikachu pika pika pikachu pika 
+pikachu pikachu pika pika pikachu pikachu pi 
+pi pikachu pika pikachu pika pika pi pika pikachu pikachu pi 
+pika pika pikachu pi pika pi pika pi pikachu pi pikachu 
+pika pika pi pi pika pi pika pika pikachu pikachu pika pikachu 
+pikachu pika pi pikachu pika pi pikachu pi pika 
+pika pi pikachu pika pi pika pikachu pi pi pikachu pika 
+pika pi pika pi pikachu pikachu pikachu pi pikachu
+							</code></pre>							
+						</section>
+			</section>
+			<section id="section-qaa">
+				<h1>Q&A</h1>
+				<img src="images/question_mark.png" width="450px" style="border-style: none; background: none;"/>
+			</section>
+			<section id="section-end">
+
 			</section>
 		</div>
 	</div>
