@@ -38,11 +38,15 @@
 			<section id="section-title" data-background="images/1.jpg">
 				<h1>Programming Languages Evolution</h1>
 				<footer class="page-footer">
-				<p class="right" style=" font-size: medium;">created by: Lukas Levvy</p>
-			</footer>
+					<p class="right" style=" font-size: medium;">created by: Lukas Levvy</p>
+				</footer>
 			</section>
 			<section id="section-comp-langs" data-background="images/2.jpg">
 				<h4>Computer languages</h4>
+				<aside class="notes">
+					Not mentioning human languages What languages do we have?
+					These are the most common. There are more
+				</aside>
 				<ul>
 					<li>
 						<p class="fragment" data-fragment-index="7">Programming</p>
@@ -73,6 +77,9 @@
 			<section id="section-machine-code">
 				<section>
 					<h2>Machine Code</h2>
+					<aside class="notes">
+						Early 1950. Not programming yet.
+					</aside>
 					<div class="container machine-flex">
 						<div class="row">
 							<div class="card-panel grey darken-2 fragment col s12">
@@ -107,6 +114,10 @@
 					<h3>
 						<p>OpCode Table</p>
 					</h3>
+					<aside class="notes">
+						First programers were women. Connecting, crossing cables,
+						printing perforated tapes.
+					</aside>
 					<img src="images/opcode.png">
 				</section>
 			</section>
@@ -138,6 +149,9 @@
 			</section>
 			<section id="section-assembly">
 				<section>
+					<aside class="notes">
+						Lowest of the low level prog lang.
+					</aside>
 					<p>Let's go to the next level:</p>
 					<h2 class="fragment">Assembly language</h2>
 					<h4 class="fragment">lowest level programming language</h4>
@@ -153,7 +167,7 @@
 								<p class="blue-grey darken-2">0110 0100</p>
 							</div>
 							<div class="col s6">
-								<p class="blue-grey darken-2">in HEX: 6 4</p>
+								<p class="blue-grey darken-2">in HEX: 6_4</p>
 							</div>
 						</div>
 						<div class="row fragment">
@@ -215,12 +229,19 @@ _myFunc PROC
 			</section>
 			<section id="section-programming-lang">
 				<h2>Programming Language</h2>
+				<aside class="notes">
+					Definition. syntax=form, semantics-meaning.
+				</aside>
 				<p>Language which comprises a set of instructions</p>
 				<p>Each language can have different:</br> <b>syntax</b> and/or <b>semantics</b></p>
 			</section>
 			<section id="section-first-langs">
 				<section>
 					<h3>First high level language</h3>
+					<aside class="notes">
+						Level of abstraction. FORTRAN.
+						In assembly it was 1 to 1 line.
+					</aside>
 					<div class="card red darken-1"><span class="fragment">Level 1</span> <span class="fragment">of abstraction</span></div>
 					<h2 class="fragment">FORTRAN</h2>
 				</section>
@@ -239,6 +260,9 @@ _myFunc PROC
 					<h1>Most popular languages in 2019</h1>
 				</section>
 				<section class="container">
+					<aside class="notes">
+						c++ php ruby python go(by google like C with GC) swift java c# kotlin javascript typescript scala
+					</aside>
 					<div class="row">
 						<div class="col s3 fragment">
 							<div class="card-panel small">
@@ -449,20 +473,20 @@ _myFunc PROC
 					</code></pre>
 				</section>
 				<section>
-						<h4>Brainfuck</h4>
-						<pre><code>
+					<h4>Brainfuck</h4>
+					<pre><code>
 ++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.
 						</code></pre>
-						<h4>Arnoldc</h4>
-						<pre><code>
+					<h4>Arnoldc</h4>
+					<pre><code>
 	IT'S SHOWTIME
 	TALK TO THE HAND "Hello, World!"
 	YOU HAVE BEEN TERMINATED
 						</code></pre>
-					</section>
-					<section>
-							<h4>Pikachu</h4>
-							<pre><code>
+				</section>
+				<section>
+					<h4>Pikachu</h4>
+					<pre><code>
 pikachu pika pikachu pika pika pi pi pika pikachu pika pikachu 
 pi pikachu pi pikachu pi pika pi pikachu pikachu pi pi pika pika
 pikachu pika pikachu pikachu 
@@ -478,15 +502,12 @@ pika pika pi pi pika pi pika pika pikachu pikachu pika pikachu
 pikachu pika pi pikachu pika pi pikachu pi pika 
 pika pi pikachu pika pi pika pikachu pi pi pikachu pika 
 pika pi pika pi pikachu pikachu pikachu pi pikachu
-							</code></pre>							
-						</section>
+							</code></pre>
+				</section>
 			</section>
 			<section id="section-qaa">
 				<h1>Q&A</h1>
-				<img src="images/question_mark.png" width="450px" style="border-style: none; background: none;"/>
-			</section>
-			<section id="section-end">
-
+				<img src="images/question_mark.png" width="450px" style="border-style: none; background: none;" />
 			</section>
 		</div>
 	</div>
@@ -589,11 +610,11 @@ pika pi pika pi pikachu pikachu pikachu pi pikachu
 			// The display mode that will be used to show slides
 			display: 'block',
 
-			multiplex: {
+			/*multiplex: {
 				secret: Reveal.getQueryHash().s || null,
 				id: '50a7b52e7ce41362',
 				url: 'hope-lew.pl:1948'
-			},
+			},*/
 
 			dependencies: [{
 					src: 'plugin/markdown/marked.js'
@@ -621,9 +642,13 @@ pika pi pika pi pikachu pikachu pikachu pi pikachu
 					async: true
 				},
 				{
+					src: 'plugin/notes-server/client.js',
+					async: true
+				},
+				/*{
 					src: Reveal.getQueryHash().s ? 'plugin/multiplex/master.js' : 'plugin/multiplex/client.js',
 					async: true
-				}
+				}*/
 			]
 		});
 		Reveal.addEventListener('fragmentshown', function (event) {
